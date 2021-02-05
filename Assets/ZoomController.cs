@@ -43,12 +43,12 @@ public class ZoomController : MonoBehaviour
             if (vec.y <= 0)  // swipe down in emu; swipe up on real device
             {
                 // => zoom out
-                transform.localScale *= 0.985f;
                 // Linear method
-                if (transform.localScale.x <= 0.0025)  // prevent rounding to 0
-                {
-                    transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                Vector3 newVal = transform.localScale * 0.985f;
+                if (newVal.x >= 0.025) {  // set a minimum value
+                    transform.localScale = newVal;
                 }
+                transform.localScale *= 0.985f;
 
                 // alternative: Addition
                 //transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
