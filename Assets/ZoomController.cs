@@ -45,10 +45,9 @@ public class ZoomController : MonoBehaviour
                 // => zoom out
                 // Linear method
                 Vector3 newVal = transform.localScale * 0.985f;
-                if (newVal.x >= 0.025) {  // set a minimum value
+                if (newVal.x >= 0.0005) {  // set a minimum value
                     transform.localScale = newVal;
                 }
-                transform.localScale *= 0.985f;
 
                 // alternative: Addition
                 //transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
