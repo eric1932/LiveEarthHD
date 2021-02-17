@@ -35,11 +35,9 @@
                 NRDebugger.Log("Create new TrackingImageVisualizer!");
                 visualizer = (TrackingImageVisualizer) Instantiate(
                     TrackingImageVisualizerPrefab,
-                    new Vector3(0f, 0f, 0f),
+                    new Vector3(0, 0, 5f),
                     Quaternion.identity);
-                // visualizer.transform.parent = transform;
                 visualizer.transform.parent = null;  // add to root of scene
-                visualizer.transform.localPosition = new Vector3(0, 0, 5f);
 
                 virtualImageTrackingEnabled = true;  // set flag
 
@@ -69,7 +67,9 @@
                 {
                     NRDebugger.Log("Create new TrackingImageVisualizer!");
                     // Create an anchor to ensure that NRSDK keeps tracking this augmented image.
-                    visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
+                    visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab,
+                            image.GetCenterPose().position,
+                            image.GetCenterPose().rotation);
                     visualizer.Image = image;
                     // visualizer.transform.parent = transform;
                     visualizer.transform.parent = null;  // add to root of scene
