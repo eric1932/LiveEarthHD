@@ -35,7 +35,7 @@
                 NRDebugger.Info("Create new TrackingImageVisualizer!");
                 visualizer = (TrackingImageVisualizer) Instantiate(
                     TrackingImageVisualizerPrefab,
-                    new Vector3(0, 0, 5f),
+                    new Vector3(0, 0, 1.05f),
                     Quaternion.identity);
                 visualizer.transform.parent = null;  // add to root of scene
 
