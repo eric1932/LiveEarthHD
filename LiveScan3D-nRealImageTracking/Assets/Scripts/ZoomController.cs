@@ -30,7 +30,7 @@ public class ZoomController : MonoBehaviour
     void Update()
     {
         //get controller rotation, and set the value to the cube transform
-        transform.rotation = NRInput.GetRotation();
+        // transform.rotation = NRInput.GetRotation();
 
         Vector2 vec = NRInput.GetDeltaTouch();
         //Debug.Log(vec.x);
