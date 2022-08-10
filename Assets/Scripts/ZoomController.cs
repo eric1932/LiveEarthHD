@@ -45,7 +45,7 @@ public class ZoomController : MonoBehaviour
                 // => zoom out
                 transform.localScale *= 0.95f;
                 // Linear method
-                if (transform.localScale.x <= 0.01)  // prevent rounding to 0
+                if (transform.localScale.x <= 0.0005)  // prevent rounding to 0
                 {
                     transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
                 }
